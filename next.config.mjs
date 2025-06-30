@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 // const isProd = process.env.NODE_ENV === "production";
+import path from 'path';
 
 const nextConfig = {
   // basePath: isProd ? "/E-learning" : "",
@@ -9,7 +10,7 @@ const nextConfig = {
     unoptimized: true,
   },
   webpack: (config) => {
-    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+    config.resolve.alias['@'] = path.resolve(path.dirname('.'), 'src');
     return config;
   },
 };
